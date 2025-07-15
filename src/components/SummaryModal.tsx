@@ -108,6 +108,7 @@ export default function SummaryModal({
                 width={28}
                 height={28}
                 className="w-7 h-7 mr-3 flex-shrink-0 rounded-md shadow-sm bg-white/10 p-1"
+                unoptimized
               />
             ) : (
               <div className="w-7 h-7 mr-3 flex-shrink-0 bg-white/30 rounded-md shadow-sm"></div>
