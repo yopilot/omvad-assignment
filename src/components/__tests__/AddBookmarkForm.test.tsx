@@ -7,11 +7,12 @@ global.fetch = vi.fn()
 
 describe('AddBookmarkForm', () => {
   const mockOnBookmarkAdded = vi.fn()
+  const mockFetch = global.fetch as ReturnType<typeof vi.fn>
 
   beforeEach(() => {
     vi.clearAllMocks()
     // Reset fetch mock completely
-    ;(global.fetch as any).mockReset()
+    mockFetch.mockReset()
   })
 
   it('renders the form correctly', () => {
@@ -28,7 +29,7 @@ describe('AddBookmarkForm', () => {
       ok: true,
       json: () => Promise.resolve({ bookmark: { id: '1' }, message: 'Success' })
     }
-    ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+    mockFetch.mockResolvedValueOnce(mockResponse)
 
     render(<AddBookmarkForm onBookmarkAdded={mockOnBookmarkAdded} />)
     
@@ -41,7 +42,7 @@ describe('AddBookmarkForm', () => {
     
     // Wait a moment and verify fetch was NOT called due to validation error
     await waitFor(() => {
-      expect(global.fetch).not.toHaveBeenCalled()
+      expect(mockFetch).not.toHaveBeenCalled()
     }, { timeout: 1000 })
   })
 
@@ -50,7 +51,7 @@ describe('AddBookmarkForm', () => {
       ok: true,
       json: () => Promise.resolve({ bookmark: { id: '1' }, message: 'Success' })
     }
-    ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+    mockFetch.mockResolvedValueOnce(mockResponse)
 
     render(<AddBookmarkForm onBookmarkAdded={mockOnBookmarkAdded} />)
     
@@ -63,7 +64,7 @@ describe('AddBookmarkForm', () => {
     fireEvent.click(submitButton)
     
     await waitFor(() => {
-      expect(global.fetch).toHaveBeenCalledWith('/api/bookmarks', {
+      expect(mockFetch).toHaveBeenCalledWith('/api/bookmarks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -86,7 +87,7 @@ describe('AddBookmarkForm', () => {
       ok: false,
       json: () => Promise.resolve({ error: 'Bookmark already exists' })
     }
-    ;(global.fetch as any).mockResolvedValueOnce(mockResponse)
+    mockFetch.mockResolvedValueOnce(mockResponse)
 
     render(<AddBookmarkForm onBookmarkAdded={mockOnBookmarkAdded} />)
     

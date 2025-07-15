@@ -16,8 +16,9 @@ async function getUserFromRequest(request: NextRequest) {
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   try {
     const user = await getUserFromRequest(request)
     if (!user) {
@@ -26,8 +27,6 @@ export async function DELETE(
         { status: 401 }
       )
     }
-
-    const { id } = params
 
     // Check if bookmark exists and belongs to user
     const bookmark = await prisma.bookmark.findFirst({

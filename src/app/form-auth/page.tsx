@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-export default function FormAuthPage() {
+function FormAuthContent() {
   const [error, setError] = useState('')
   const searchParams = useSearchParams()
 
@@ -112,5 +112,13 @@ export default function FormAuthPage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function FormAuthPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <FormAuthContent />
+    </Suspense>
   )
 }

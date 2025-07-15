@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { BookmarkList } from '@/components/BookmarkList'
 import { AddBookmarkForm } from '@/components/AddBookmarkForm'
@@ -26,7 +26,7 @@ export default function Dashboard() {
   const [allTags, setAllTags] = useState<string[]>([])
   const router = useRouter()
 
-  const fetchBookmarks = async () => {
+  const fetchBookmarks = useCallback(async () => {
     try {
       const response = await fetch('/api/bookmarks')
       
@@ -57,11 +57,11 @@ export default function Dashboard() {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [router])
 
   useEffect(() => {
     fetchBookmarks()
-  }, [router])
+  }, [fetchBookmarks])
 
   useEffect(() => {
     if (selectedTag) {

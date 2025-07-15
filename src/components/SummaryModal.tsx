@@ -2,6 +2,7 @@ import { X, ExternalLink, Tag } from 'lucide-react'
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { extractDomain, formatDate } from '@/lib/utils'
+import Image from 'next/image'
 
 interface SummaryModalProps {
   isOpen: boolean
@@ -101,9 +102,11 @@ export default function SummaryModal({
           {/* Header with favicon and domain */}
           <div className="flex items-center mb-4">
             {favicon ? (
-              <img
+              <Image
                 src={favicon}
                 alt=""
+                width={28}
+                height={28}
                 className="w-7 h-7 mr-3 flex-shrink-0 rounded-md shadow-sm bg-white/10 p-1"
               />
             ) : (

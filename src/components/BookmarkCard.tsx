@@ -5,6 +5,7 @@ import { Bookmark } from '@/app/page'
 import { formatDate, truncateText, extractDomain } from '@/lib/utils'
 import { ExternalLink, Trash2, Tag } from 'lucide-react'
 import SummaryModal from './SummaryModal'
+import Image from 'next/image'
 
 interface BookmarkCardProps {
   bookmark: Bookmark
@@ -61,9 +62,11 @@ export function BookmarkCard({ bookmark, onDeleted }: BookmarkCardProps) {
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center min-w-0 flex-1">
             {bookmark.favicon && !imageError ? (
-              <img
+              <Image
                 src={bookmark.favicon}
                 alt=""
+                width={20}
+                height={20}
                 className="w-5 h-5 mr-2 flex-shrink-0 rounded-sm"
                 onError={() => setImageError(true)}
               />
