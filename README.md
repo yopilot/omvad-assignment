@@ -2,7 +2,27 @@
 
 A full-stack web application that allows users to save bookmarks with AI-powered summaries. Built for the Omvad internship take-home assignment.
 
-## 🚀 Features
+## Features
+
+### Sign In / Sign Up (with JWT Authentication)
+- Secure user authentication using JSON Web Tokens.
+- ![Sign In](https://github.com/user-attachments/assets/4cd42434-f450-46a8-85fb-5002d3a42ead)
+- ![UI](https://github.com/user-attachments/assets/0bf69eac-5b12-4822-929f-ec51b879f4cf)
+
+### Adding Bookmarks
+- Easily save and manage bookmarks with AI-generated summaries.
+- ![Adding Bookmark](https://github.com/user-attachments/assets/bool.gif) <!-- Fixed placeholder link; replace with actual URL if available -->
+
+### Tag Filter Selection
+- Organize and filter bookmarks using tags for quick access.
+- ![Tag Selection](https://github.com/user-attachments/assets/175c84f9-15f5-4eb9-aa6a-c537bc7d2c75)
+
+### Modern UI
+- Sleek and intuitive user interface for seamless navigation.
+- ![Card Open](https://github.com/user-attachments/assets/8d58b2a4-4ab5-47d8-9e21-dadb03b7bb6f)
+
+## Working Link
+- [https://omvad-assignment-ddjd.onrender.com/]
 
 ### Core Features (Must-have)
 - ✅ **User Authentication**: Email/password registration and login with bcrypt password hashing
