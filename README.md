@@ -3,18 +3,34 @@
 A full-stack web application that allows users to save bookmarks with AI-powered summaries. Built for the Omvad internship take-home assignment.
 
 ## Features
-
+- ![UI](https://github.com/user-attachments/assets/0bf69eac-5b12-4822-929f-ec51b879f4cf)
+  
 ### Sign In / Sign Up (with JWT Authentication)
 - Secure user authentication using JSON Web Tokens.
+- Clean, centered login/register form
+- Input validation with error messages
+- Responsive design for mobile and desktop
 - ![Sign In](https://github.com/user-attachments/assets/4cd42434-f450-46a8-85fb-5002d3a42ead)
-- ![UI](https://github.com/user-attachments/assets/0bf69eac-5b12-4822-929f-ec51b879f4cf)
+
 
 ### Adding Bookmarks
 - Easily save and manage bookmarks with AI-generated summaries.
-- ![Adding Bookmark](https://github.com/user-attachments/assets/bool.gif) <!-- Fixed placeholder link; replace with actual URL if available -->
+- Favicon and domain display
+- Truncated title and summary
+- Tag badges with icons
+- Delete button with confirmation
+- External link to original URL
+- Creation date
+- ![bool](https://github.com/user-attachments/assets/bc7ab959-b7a5-4832-815f-f3cb1437290a)
 
-### Tag Filter Selection
+### DASHBOARD with Tag Filter Selection
 - Organize and filter bookmarks using tags for quick access.
+- Header with logo and logout functionality
+- Add bookmark form with URL and tags input
+- Tag filter system
+- Responsive bookmark grid
+- Each bookmark card shows favicon, title, summary, and tags
+
 - ![Tag Selection](https://github.com/user-attachments/assets/175c84f9-15f5-4eb9-aa6a-c537bc7d2c75)
 
 ### Modern UI
@@ -158,27 +174,11 @@ npm run test:ui
 - `createdAt` - Bookmark creation timestamp
 - `updatedAt` - Last update timestamp
 
-## 🎨 Screenshots
 
-### Authentication Page
-- Clean, centered login/register form
-- Input validation with error messages
-- Responsive design for mobile and desktop
 
-### Dashboard
-- Header with logo and logout functionality
-- Add bookmark form with URL and tags input
-- Tag filter system
-- Responsive bookmark grid
-- Each bookmark card shows favicon, title, summary, and tags
 
-### Bookmark Cards
-- Favicon and domain display
-- Truncated title and summary
-- Tag badges with icons
-- Delete button with confirmation
-- External link to original URL
-- Creation date
+
+
 
 ## 🚀 Deployment
 
@@ -242,10 +242,3 @@ Update these in your deployment platform:
 ## 📄 License
 
 This project is built for the Omvad internship assignment.
-
-## 🙏 Acknowledgments
-
-- **Jina AI** for providing free summarization API
-- **Next.js** for the excellent full-stack framework
-- **Prisma** for the fantastic database toolkit
-- **Tailwind CSS** for rapid UI development
