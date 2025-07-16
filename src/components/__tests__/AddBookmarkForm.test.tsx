@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import { AddBookmarkForm } from '@/components/AddBookmarkForm'
+import '@testing-library/jest-dom'
+import { AddBookmarkForm } from '../AddBookmarkForm'
 
 // Mock fetch
 global.fetch = vi.fn()
